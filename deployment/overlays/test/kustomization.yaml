@@ -1,0 +1,5 @@
+namespace: jenkins-project
+bases:
+- ../../base
+patchesStrategicMerge:
+- prometheus.yaml
