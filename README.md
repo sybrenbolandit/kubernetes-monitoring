@@ -10,4 +10,4 @@ Before deploying the kubernetes resources in this repository the prometheus oper
 
 To deploy the kubernetes resources run the following command:
 
-```kustomize build overlays/test | kubectl apply --record -f  -```
+```cd deployment | kustomize build overlays/test | kubectl apply --record -f  -```

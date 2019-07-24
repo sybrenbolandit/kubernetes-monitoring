@@ -2,4 +2,5 @@ namespace: jenkins-project
 bases:
 - ../../base
 patchesStrategicMerge:
+- alertmanager-secret.yaml
 - prometheus.yaml
