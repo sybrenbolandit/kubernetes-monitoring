@@ -4,3 +4,8 @@ metadata:
   name: prometheus
 spec:
   replicas: 1
+  alerting:
+    alertmanagers:
+      - name: alertmanager-jenkins-project
+        namespace: jenkins-project
+        port: web
