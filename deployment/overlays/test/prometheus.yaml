@@ -6,6 +6,6 @@ spec:
   replicas: 1
   alerting:
     alertmanagers:
-      - name: alertmanager-jenkins-project
-        namespace: jenkins-project
+      - name: alertmanager-sybenbolandit
+        namespace: sybenbolandit
         port: web

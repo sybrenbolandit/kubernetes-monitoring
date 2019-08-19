@@ -4,7 +4,7 @@
 
 Before deploying the kubernetes resources in this repository the prometheus operator should be installed.
 
-```helm install coreos/prometheus-operator --name prometheus-operator --namespace jenkins-project```
+```helm install coreos/prometheus-operator --name prometheus-operator --namespace sybenbolandit```
 
 ## Deploy
 

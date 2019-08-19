@@ -3,15 +3,15 @@ kind: Prometheus
 metadata:
   name: prometheus
   labels:
-    prometheus: jenkins-project
+    prometheus: sybenbolandit
 spec:
   serviceMonitorSelector:
     matchLabels:
-      prometheus: jenkins-project
+      prometheus: sybenbolandit
   resources:
     requests:
       memory: 400Mi
   ruleSelector:
     matchLabels:
-      prometheus: jenkins-project
+      prometheus: sybenbolandit
       role: alert-rules
