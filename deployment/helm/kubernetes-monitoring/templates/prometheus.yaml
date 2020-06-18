@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+  labels:
+    prometheus: sybrenbolandit
+{{ include "kubernetes-monitoring.labels" . | nindent 4 }}
+spec:
+  serviceMonitorSelector:
+    matchLabels:
+      prometheus: sybrenbolandit
+  replicas: 1
+  resources:
+    requests:
+      memory: 400Mi
+  ruleSelector:
+    matchLabels:
+      prometheus: sybrenbolandit
+      role: alert-rules
+  alerting:
+    alertmanagers:
+      - name: alertmanager-sybrenbolandit
+        namespace: {{ .Values.prometheus.namespace }}
+        port: web

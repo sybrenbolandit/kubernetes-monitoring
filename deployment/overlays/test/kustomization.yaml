@@ -1,6 +1,0 @@
-namespace: sybenbolandit
-bases:
-- ../../base
-patchesStrategicMerge:
-- alertmanager-secret.yaml
-- prometheus.yaml

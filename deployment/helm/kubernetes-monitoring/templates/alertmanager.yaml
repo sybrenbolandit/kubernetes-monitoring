@@ -1,0 +1,8 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Alertmanager
+metadata:
+  name: sybrenbolandit
+  labels:
+{{ include "kubernetes-monitoring.labels" . | nindent 4 }}
+spec:
+  replicas: 1

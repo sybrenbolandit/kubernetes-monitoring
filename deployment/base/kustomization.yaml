@@ -1,6 +1,0 @@
-resources:
-- alertmanager.yaml
-- alertmanager-secret.yaml
-- alertmanager-service.yaml
-- prometheus.yaml
-- rbac.yaml

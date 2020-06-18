@@ -1,0 +1,7 @@
+environment: test
+
+prometheus:
+  namespace: sybrenbolandit
+  slack:
+    webhook: https://hooks.slack.com/services/KSNDNICEJN/HDHEBECHB/jenf23KJJNJN93jfnm
+    alertChannel: mijnns-alerts-ota
