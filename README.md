@@ -14,4 +14,12 @@ helm -n <namespace> install prometheus stable/prometheus-operator \
 
 To deploy the kubernetes resources run the following command:
 
-```cd deployment/helm/kubernetes-monitoring | helm -n <namespace> install --values environments/test/values.yaml kubernetes-monitoring .```
+```
+cd deployment/helm/kubernetes-monitoring
+    
+helm secrets install kubernetes-monitoring . \
+      --namespace <namespace>                \
+      --values environments/test/values.yaml \
+      --values environments/test/secrets.yaml
+                     
+```
