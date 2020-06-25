@@ -1,0 +1,38 @@
+{{- if .Values.fluentd.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fluentd
+  labels:
+    app: fluentd
+{{ include "kubernetes-monitoring.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      app: fluentd
+  template:
+    metadata:
+      labels:
+        app: fluentd
+    spec:
+      containers:
+      - name: fluentd
+        image: sybrenbolandit/fluentd:1.0.0
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: 250m
+            memory: 500Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        ports:
+        - containerPort: 24224
+        volumeMounts:
+        - name: fluentd-config
+          mountPath: /fluentd/etc/
+      volumes:
+      - name: fluentd-config
+        configMap:
+          name: fluentd-config
+{{- end }}

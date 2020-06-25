@@ -1,0 +1,14 @@
+{{- if .Values.fluentd.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: fluentd
+  labels:
+{{ include "kubernetes-monitoring.labels" . | nindent 4 }}
+spec:
+  ports:
+  - port: 24224
+    targetPort: 24224
+  selector:
+    app: fluentd
+{{- end }}
